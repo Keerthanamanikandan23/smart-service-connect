@@ -6,8 +6,13 @@ const connectDB = require('./config/db')
 const authRoutes = require('./routes/authRoutes')
 const bookingRoutes = require('./routes/bookingRoutes')
 const app = express()
-connectDB()
-app.use(cors())
+console.log("Starting server...");
+
+connectDB();
+
+console.log("DB connection function called");
+
+app.use(cors());
 app.use(express.json())
 app.use('/api/auth', authRoutes)
 app.use('/api/services', serviceRoutes)
